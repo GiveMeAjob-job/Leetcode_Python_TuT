@@ -1,7 +1,3 @@
-Below is an **English** version of the primary `README.md` homepage, demonstrating how to link to separate Markdown files (like `heap.md`) for additional details. You can adapt it to suit your project’s exact needs.
-
----
-
 # Leetcode_Python_TuT
 
 Welcome to **Leetcode_Python_TuT** — a repository where we organize and explain common **LeetCode** problems using **Python**. The code and explanatory notes are grouped by algorithmic or data-structure topics. We hope this approach helps you better understand LeetCode challenges and related concepts.
@@ -22,7 +18,7 @@ Below, you’ll find links to subtopics. Each topic has its own `.md` file in th
 
 1. **Clone or download** this repository:
    ```bash
-   git clone https://github.com/yourusername/Leetcode_Python_TuT.git
+   git clone https://github.com/GiveMeAjob-job/Leetcode_Python_TuT.git
    cd Leetcode_Python_TuT
    ```
 
@@ -61,14 +57,5 @@ Leetcode_Python_TuT
 ## Contributing
 
 If you’d like to add new solutions, correct existing code, or enhance documentation, feel free to open an **Issue** or send a **Pull Request**. We appreciate all forms of collaboration.
-
-## License
-
-*(Optional)* Indicate your project’s license here—e.g., MIT License, Apache 2.0, etc. For example:
-
-```
-MIT License
-[Full license text...]
-```
 
 Thank you for checking out **Leetcode_Python_TuT**. Happy coding!
