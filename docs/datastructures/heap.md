@@ -1,22 +1,4 @@
 # Heap (docs/heap.md)
-| Status | LeetCode# | Title                                         | Thought Process                                                                                                                                                            |
-|-------:|----------:|:----------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        |       215 | Kth Largest Element in an Array               | Use a **min-heap** of size k. Push elements into the heap, and if the heap size exceeds k, pop the smallest. The heap top is the kth largest element.                      |
-|        |       347 | Top K Frequent Elements                       | Count frequencies. Use a **min-heap** of size k based on frequency. Keep top k frequent elements in the heap.                                                              |
-|        |       703 | Kth Largest Element in a Stream               | Maintain a **min-heap** of size k for the incoming stream. For each new number, push it in; if heap size > k, pop the smallest. The top is always the kth largest.         |
-|        |        23 | Merge k Sorted Lists                          | Use a **min-heap** to keep track of the heads of each list. Repeatedly pop the smallest node and push its next node into the heap until all lists are merged.              |
-|        |       295 | Find Median from Data Stream                  | Maintain two heaps: a **max-heap** for the lower half, and a **min-heap** for the upper half. Balance their sizes so the median can be easily found from the tops.         |
-|        |       378 | Kth Smallest Element in a Sorted Matrix       | Use a **min-heap**. Insert the first element of each row, pop the smallest, then insert the next element from that row. Do this k times to find the kth smallest.          |
-|        |       692 | Top K Frequent Words                          | Similar to #347 but for words. Use a **min-heap** of size k by frequency, and if frequencies tie, sort by lexicographical order.                                           |
-|        |      1046 | Last Stone Weight                             | Use a **max-heap** of stone weights. Repeatedly pop two largest, smash them, and if there is a remainder, push it back. Continue until ≤1 stone remains.                   |
-|        |       973 | K Closest Points to Origin                    | Use a **max-heap** of size k. For each point, calculate distance to origin, push it. If heap size exceeds k, pop the largest.                                              |
-|        |       264 | Ugly Number II                                | Use a **min-heap** to generate ugly numbers. Pop the smallest and generate its multiples by 2, 3, 5; avoid duplicates. The nth popped is the nth ugly number.              |
-|        |       621 | Task Scheduler                                | Use a **max-heap** of tasks by frequency. Repeatedly schedule the most frequent task, track cooldown, and then re-push tasks when they become available.                   |
-|        |       767 | Reorganize String                             | Use a **max-heap** of characters by frequency. Pop the top two distinct chars in turn to build the result string so no two adjacent chars are the same.                    |
-|        |       502 | IPO                                           | Use a **max-heap** of project profits that are affordable with current capital. Pick the largest profit project each time until you've done k projects or none left.       |
-|        |       632 | Smallest Range Covering Elements from K Lists | Use a **min-heap** of the current elements (one from each list). Track the current max of these elements. Pop the smallest and push the next element of that list.         |
-|        |      1642 | Furthest Building You Can Reach               | Use a **max-heap** (or min-heap in some implementations) to manage climbs. Whenever you exceed the available bricks, consider using a ladder for the highest climb.        |
-|        |      1834 | Single-Threaded CPU                           | Sort tasks by arrival time. Push available tasks into a **min-heap** by their processing time. The CPU always picks the smallest processing time task available to run.    |
 
 A **Heap** is a special tree-based data structure, commonly used to maintain a **maximum** or **minimum** element efficiently. It supports:
 
@@ -87,3 +69,24 @@ print(heap.pop())  # Next max: 8
 
 Feel free to explore additional examples under the [`heap/`](../Data%20Structures/heap/) directory.  
 For broader context on binary trees, see [Trees](trees.md) and for advanced usage, check out the official Python `heapq` module in the standard library.
+
+
+
+| Status | LeetCode# | Title                                         | Thought Process                                                                                                                                                            |
+|-------:|----------:|:----------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        |       215 | Kth Largest Element in an Array               | Use a **min-heap** of size k. Push elements into the heap, and if the heap size exceeds k, pop the smallest. The heap top is the kth largest element.                      |
+|        |       347 | Top K Frequent Elements                       | Count frequencies. Use a **min-heap** of size k based on frequency. Keep top k frequent elements in the heap.                                                              |
+|        |       703 | Kth Largest Element in a Stream               | Maintain a **min-heap** of size k for the incoming stream. For each new number, push it in; if heap size > k, pop the smallest. The top is always the kth largest.         |
+|        |        23 | Merge k Sorted Lists                          | Use a **min-heap** to keep track of the heads of each list. Repeatedly pop the smallest node and push its next node into the heap until all lists are merged.              |
+|        |       295 | Find Median from Data Stream                  | Maintain two heaps: a **max-heap** for the lower half, and a **min-heap** for the upper half. Balance their sizes so the median can be easily found from the tops.         |
+|        |       378 | Kth Smallest Element in a Sorted Matrix       | Use a **min-heap**. Insert the first element of each row, pop the smallest, then insert the next element from that row. Do this k times to find the kth smallest.          |
+|        |       692 | Top K Frequent Words                          | Similar to #347 but for words. Use a **min-heap** of size k by frequency, and if frequencies tie, sort by lexicographical order.                                           |
+|        |      1046 | Last Stone Weight                             | Use a **max-heap** of stone weights. Repeatedly pop two largest, smash them, and if there is a remainder, push it back. Continue until ≤1 stone remains.                   |
+|        |       973 | K Closest Points to Origin                    | Use a **max-heap** of size k. For each point, calculate distance to origin, push it. If heap size exceeds k, pop the largest.                                              |
+|        |       264 | Ugly Number II                                | Use a **min-heap** to generate ugly numbers. Pop the smallest and generate its multiples by 2, 3, 5; avoid duplicates. The nth popped is the nth ugly number.              |
+|        |       621 | Task Scheduler                                | Use a **max-heap** of tasks by frequency. Repeatedly schedule the most frequent task, track cooldown, and then re-push tasks when they become available.                   |
+|        |       767 | Reorganize String                             | Use a **max-heap** of characters by frequency. Pop the top two distinct chars in turn to build the result string so no two adjacent chars are the same.                    |
+|        |       502 | IPO                                           | Use a **max-heap** of project profits that are affordable with current capital. Pick the largest profit project each time until you've done k projects or none left.       |
+|        |       632 | Smallest Range Covering Elements from K Lists | Use a **min-heap** of the current elements (one from each list). Track the current max of these elements. Pop the smallest and push the next element of that list.         |
+|        |      1642 | Furthest Building You Can Reach               | Use a **max-heap** (or min-heap in some implementations) to manage climbs. Whenever you exceed the available bricks, consider using a ladder for the highest climb.        |
+|        |      1834 | Single-Threaded CPU                           | Sort tasks by arrival time. Push available tasks into a **min-heap** by their processing time. The CPU always picks the smallest processing time task available to run.    |

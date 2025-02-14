@@ -1,0 +1,24 @@
+
+---
+
+|  Status   | LeetCode# | Title                                                 | Thought Process                                                                                                                                                                             |
+|:---:|:------------:|:------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ ] | 200          | Number of Islands (Union-Find version)                | Although commonly solved by DFS/BFS, it can also be done via DSU by unifying adjacent land cells and counting the number of distinct parent sets.                                           |
+| [ ] | 130          | Surrounded Regions (Union-Find version)               | Union border 'O' cells with a virtual “edge” node, so those connected to border remain “safe”. After building DSU, flip any 'O' that is not connected to the border’s parent.               |
+| [ ] | 261          | Graph Valid Tree                                      | Union-Find to check if there is exactly one connected component (n-1 edges) and no cycle.                                                                                                   |
+| [ ] | 305          | Number of Islands II                                  | Incrementally add land. For each new land, union it with adjacent lands. Track the count of disjoint sets (number of islands).                                                              |
+| [ ] | 323          | Number of Connected Components in an Undirected Graph | Similar approach to #200 / #261 but in a general graph context. Initially, each node is its own parent, unify edges. Count distinct parents in the end.                                     |
+| [ ] | 399          | Evaluate Division (Weighted Union-Find)               | Each variable is a node; unify them with a ratio (weight). Query is to find the ratio between two nodes by comparing their connection path.                                                 |
+| [ ] | 684          | Redundant Connection                                  | In a tree with n nodes, the extra edge creates a cycle. While adding edges, use Union-Find. The first edge causing union of two already-connected nodes is the redundant edge.              |
+| [ ] | 685          | Redundant Connection II                               | Variation with possible two parents scenario. Use a combination of DSU and logic to detect which edge is redundant in a directed setting.                                                   |
+| [ ] | 721          | Accounts Merge                                        | Treat each email as a node, unify emails belonging to the same account. Then group by the DSU parent.                                                                                       |
+| [ ] | 737          | Sentence Similarity II                                | Each pair of similar words is unified. To check if two words are similar, see if they share the same parent in DSU.                                                                         |
+| [ ] | 839          | Similar String Groups                                 | Two strings are similar if they differ by swapping only two characters. You unify all strings that are directly/indirectly similar, and the answer is the count of connected components.    |
+| [ ] | 952          | Largest Component Size by Common Factor               | Union-Find by factoring each number and linking all numbers sharing common prime factors. The largest set size is the answer.                                                               |
+| [ ] | 990          | Satisfiability of Equality Equations                  | Union variables for “==”. Then check “!=”; if two variables are in the same set, contradiction.                                                                                             |
+| [ ] | 1061         | Lexicographically Smallest Equivalent String          | Each pair `(a, b)` means `a` and `b` are equivalent. Use DSU to unify them, then for each character in the string, replace it with the smallest “representative” in its connected set.      |
+| [ ] | 1202         | Smallest String With Swaps                            | Unify the indices that can be swapped. Within each connected component, sort the letters and reassign them in ascending order.                                                              |
+| [ ] | 1135         | Connecting Cities With Minimum Spanning Tree          | Typically a **Kruskal** MST approach, which uses Union-Find to unify edges in ascending order of cost.                                                                                      |
+
+---
+
