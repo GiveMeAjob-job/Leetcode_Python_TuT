@@ -8,11 +8,21 @@ import sys
 #     PROJECTS_BQ_List,
 #     ...
 # )
+import markdown2
+
+
 
 from bq.data_imports import (
     P1_BQ_ANSWERS,
     P2_BQ_ANSWERS,
     P3_BQ_ANSWERS,
+    LP_ANSWERS,
+    Project1_LP_FOLLOWUP_QUESTIONS,
+    Project1_LP_FOLLOWUP_ANSWER,
+    Project2_LP_FOLLOWUP_QUESTIONS,
+    Project2_LP_FOLLOWUP_ANSWER,
+    Project3_LP_FOLLOWUP_QUESTIONS,
+    Project3_LP_FOLLOWUP_ANSWER,
 )
 
 def get_project_bq_data(project_key, q_identifier):

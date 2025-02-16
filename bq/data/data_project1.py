@@ -11,12 +11,30 @@ P1_Overall_Context = {
 
 
 P1_BQ_ANSWERS = {
-    "1":  {
+
+    # 1
+    "1": {
         "en": {
-            "situation": """The course had a set due date for final presentations, meaning we had only a few weeks to implement an end-to-end pipeline for data ingestion, processing, and indexing. We worked with tens of thousands of sample log entries in our test environment.""",
-            "task": """课程的最终评审有固定交付日期，需要在有限的几周内实现从数据采集到索引查询的端到端流程。我们在实验中大约处理了几十万条模拟日志数据。""",
-            "action": "- Step1...\n- Step2...\n- Step3...",
-            "result": "We completed on time and increased performance by 40%..."
+            "situation": """During my junior year of college, my professor assigned our team a challenging task: to develop a near-real-time data processing prototype within two weeks. We also had to meet multiple performance metrics, such as how quickly we could process and index one million synthetic log entries. Meanwhile, each member of the team faced the pressure of final exams, which made time management particularly difficult.""",
+            "task": """My responsibility was to lead and coordinate our small team, ensuring we delivered a functional prototype within the two-week window while meeting the core performance requirements set by the professor. In other words, I needed to manage the schedule, distribute tasks effectively, and help team members balance their exam obligations and the project deadlines.""",
+            "action": """**1. Confirming Core Requirements**
+
+I first met with the professor to clarify the most important goals of the project—namely “processing speed” and “reliability,” rather than extra features. This allowed us to channel our limited time and energy into optimizing the core data pipeline instead of spreading ourselves thin on non-essential functionality.
+
+**2. Task Breakdown & Resource Allocation**
+
+After discussing with the professor and evaluating each teammate’s technical strengths, I divided the project into three main modules: log ingestion, indexing, and a minimal viable dashboard. One teammate had multiple exams, so I volunteered to take on additional scripting tasks to keep the overall progress on track and reduce that teammate’s workload.
+
+**3. Frequent Communication & Rapid Iteration**
+
+Given the two-week deadline, we adopted a high-frequency communication model. We held stand-up meetings every two days for quick progress reports and to swiftly address any issues. Additionally, I organized a more comprehensive weekly team meeting to align our overall direction, resolve potential challenges (such as AWS permissions or concurrency configuration), and ensure all subgroups stayed in sync.
+
+**4. Mid-Project Prioritization Adjustments**
+
+Around the midpoint of the project, we realized we couldn’t test all edge cases in the remaining time. I promptly called an emergency meeting to identify the most critical error-handling paths and high-volume scenarios. By focusing our testing efforts on these crucial areas, we avoided dissipating our resources and ensured we could complete the must-have features and testing within the deadline.""",
+            "result": """Despite the tight two-week timeframe, we successfully delivered a functional prototype and improved the overall processing speed by about 40% compared to our initial tests. During the final demo, our system was able to process and index over one million synthetic logs in a very short time, earning high praise from the professor for our near-real-time performance optimizations.
+
+Looking back, maintaining close communication and clear prioritization proved essential. By understanding each member’s exam schedule and technical strengths, we allocated tasks in a way that allowed everyone to perform at their best. Our frequent stand-ups and weekly team meetings enabled us to quickly spot issues and adjust our plans, ensuring we met all objectives within the tight timeframe. When we realized we couldn’t cover every edge case, focusing on the project’s core functionalities and tests allowed us to balance both speed and quality, ultimately delivering a high-quality result under rigorous time constraints."""
         },
         "cn": {
             "situation": "我们只有两周时间完成一个原型...",
@@ -26,13 +44,37 @@ P1_BQ_ANSWERS = {
         }
     },
 
-
-    "2":   {
+    # 2
+    "2": {
         "en": {
-            "situation": """Although the course requirements didn’t mandate error handling or fault tolerance, I took the initiative to design a simple centralized error-handling mechanism, aiming for better stability in our distributed setup.""",
-            "task": """Although the course requirements didn’t mandate error handling or fault tolerance, I took the initiative to design a simple centralized error-handling mechanism, aiming for better stability in our distributed setup.""",
-            "action": "- Step1...\n- Step2...\n- Step3...",
-            "result": "We completed on time and increased performance by 40%..."
+            "situation": """Each teammate was responsible for different parts of the data pipeline. As we integrated our code, we found that everyone had a different way of handling errors—some used try-catch blocks, some relied on silent fails, and others just printed logs without any alerting. This lack of a unified approach made it extremely difficult to pinpoint issues, especially under high load or when logs were missing.""",
+            "task": """Although my primary responsibility was to optimize the Lambda functions for faster processing, I realized that the project was at risk without a proper error-handling strategy. No one was officially assigned to unify or document these practices, but I felt it was crucial to ensure the overall reliability of our system. I decided to take the initiative to propose and implement a standardized error-handling framework, even though it was outside my original responsibility.""",
+            "action": """
+
+1. **Identify the Gap & Propose a Plan (Ownership / Customer Obsession)**
+    
+    I created a short proposal outlining how we could unify our error-handling process.
+    
+    I made sure that I detailed the benefits by explaining how consistent error logging, retry logic, and clear alerts would reduce debugging time and prevent silent failures. This could also help us develop a more reliable product.
+    
+2. **Develop a Shared Solution (Dive Deep / Bias for Action)**
+    
+    “I built a **shared utility** module for standardized error handling—covering retries, structured logs, and Slack/email alerts. (e.g., sending notifications to our Slack channel whenever an error threshold was exceeded).
+    
+    I tested this module in my own Lambda functions first, ironing out kinks and ensuring it was easy to integrate.
+    
+3. **Educate & Enable the Team (Earn Trust / Deliver Results)**
+    
+    “I organized a short workshop to show teammates how to integrate the module and demonstrate how it immediately flagged issues. Then I created a **mini wiki** with code snippets and FAQs so they could adopt it quickly in their own functions.”""",
+            "result": """
+
+“After adoption, **troubleshooting time** dropped by about 30% because e no longer had to sift through ad-hoc logs to figure out where an error occurred. 
+
+Our pipeline became more stable in load tests, as consistent retry policies and alerts helped us catch transient failures quickly.
+
+It also enhanced team collaboration, because everyone followed the same approach, making handoffs and code reviews smoother.
+
+This initiative wasn’t in my original to-do list, but it ultimately **saved the project** from recurring, hard-to-diagnose errors. The professor even noted how our pipeline had fewer downtime incidents compared to similar projects."""
         },
         "cn": {
             "situation": """由于课程对错误处理没做强制要求，但我希望我们的原型具有一定的健壮性，主动设计了一个集中式的错误处理和告警机制，以防止处理流程意外终止。""",
@@ -42,12 +84,36 @@ P1_BQ_ANSWERS = {
         }
     },
 
-    "3":   {
+    # 3
+    "3": {
         "en": {
-            "situation": """One member of the team was new to distributed systems, so I conducted knowledge-sharing sessions to accelerate their understanding of distributed processing and indexing fundamentals.""",
-            "task": """""",
-            "action": "- Step1...\n- Step2...\n- Step3...",
-            "result": "We completed on time and increased performance by 40%..."
+            "situation": """During my senior year, I led a small team building a **Full-Stack Note Management System**. The goal was to enable distributed teams to **store, version, and share** large documents.
+
+Partway through, our main stakeholder—the professor—was traveling and **couldn’t respond promptly to our questions - we wanted to clarify** some advanced features (like version control). Meanwhile, the team debated whether to **finalize backend APIs** first or build a **clickable frontend** to gather user feedback.""",
+            "task": """We needed to move forward quickly to deliver a prototype for an upcoming milestone review. Without the professor’s immediate input, we had incomplete information regarding certain advanced features (e.g., file versioning logic, user permission levels), but we had to make a decision on how to start development to avoid stalling the entire team.""",
+            "action": """
+
+1. **Gather Limited Info & Weigh Options (Bias for Action / Dive Deep)**
+    
+    “I quickly reviewed the partial requirements we had,  focusing on the **core user flows:** basic note creation, file upload, and sharing. 
+    
+    I led a brief discussion with my teammates, laying out two possible approaches:
+    
+    - **Approach 1:** Build a clickable frontend prototype using a mock API so we could collect user feedback on UI/UX sooner and we avoid locking in backend details too soon.
+    - **Approach 2: Implement Backend logic first** to define schemas and storage before UI.
+    - We reasoned that **front-end feedback** from users would be the most critical for this milestone, because if the UI/UX was not intuitive, the rest of the system wouldn’t matter. We eventually decided to do a **lightweight frontend MVP** with fake data, while simultaneously drafting a flexible backend design in case the professor returned with new requirements.
+2. **Parallel Prototyping (Invent and Simplify / Ownership)**
+    
+    “I set up a **minimal REST interface** returning dummy data so the UI team could build user flows—like note creation and file upload placeholders—without waiting for final backend logic. Meanwhile, I started an outline of our MongoDB schemas, prepared to adapt them once we got the professor’s input. This way, no one stayed idle.”
+    
+3. **Iterate & Adapt (Deliver Results / Customer Obsession)**
+    
+    “We tested the frontend prototype with classmates for early UX feedback—things like flow, layout, and basic upload steps. When the professor eventually returned, we folded his advanced feature requests (permissions, version control) into the real backend. Because we had used a mock API, integration required minimal rewrites. We delivered a user-testable MVP on time.”""",
+            "result": """We **avoided blocking** the project waiting for the professor’s approval by delivering a **front-end MVP** in time for the milestone. Users could walk through the main flows (create, share, edit notes) and give feedback on usability right away.
+
+When the professor returned, he provided insights on **version control and permissions**, which we then folded into the **real backend**. Because we had done a minimal mock setup earlier, the integration process was straightforward and **didn’t require major rewrites**.
+
+The milestone review went well, and the professor praised our willingness to **iterate quickly** despite incomplete specs."""
         },
         "cn": {
             "situation": "我们只有两周时间完成一个原型...",
@@ -59,10 +125,36 @@ P1_BQ_ANSWERS = {
 
     "4":   {
         "en": {
-            "situation": """""",
-            "task": """""",
-            "action": "- Step1...\n- Step2...\n- Step3...",
-            "result": "We completed on time and increased performance by 40%..."
+            "situation": """During my junior year, I worked on a distributed data processing project However, we ran into a big issue: everyone had their own way of handling errors and logging, often just printing messages to the console or ignoring failures altogether. This inconsistency made it tough to troubleshoot and ensure reliability for large-scale data processing.""",
+            "task": """I realized the team lacked a uniform error-handling and monitoring strategy. Wanting to improve the project’s overall stability, I decided to guide my teammates toward a standardized framework for error handling—even though this was outside my direct scope of responsibilities.""",
+            "action": """
+
+1. **Research & Preparation** 
+    
+    Spend sometime researching and teaching myself about the best practices for handling errors and logging (curiosity)
+    
+2. **Identify the Gap & Propose a Solution (Ownership / Customer Obsession)**
+    
+    “I drafted a brief plan explaining why consistent retries, structured logs, and clear alerts would help us meet our stability goals. I communicated the time-savings and reduced confusion to teammates and our professor—who effectively was our ‘customer’—to gain buy-in.”
+    
+3. **Develop & Document a Simple Utility (Dive Deep / Invent and Simplify)**
+    
+    Alongside, I wrote concise docs with examples so teammates could easily integrate it into their Lambda functions.”
+    
+4. **Hands-On Mentoring (Earn Trust / Deliver Results)**
+    
+    To ensure teammates truly understood and embraced these best practices, I **organized short workshops** demonstrating how to plug in the module, set up environment variables, and interpret logs in CloudWatch.
+    
+    I also offered **one-on-one sessions**, where I paired with teammates to migrate their existing code and taught them how to debug issues using the new logging and alerting tools.
+    
+5. **Ongoing Support & Feedback Loop (Deliver Results)**
+    
+    After the initial rollout, I continued to **check in** with teammates during stand-up meetings, gathering feedback on pain points or improvements.
+    
+    I updated the library based on their suggestions—such as adding custom tags for different error types—making the tool even more user-friendly.""",
+            "result": """
+
+“After adoption, our team **significantly cut troubleshooting time** because everyone used the same error-handling approach. Even newer members felt more at ease pushing updates, knowing they had a **robust fallback**. Ultimately, the project’s stability improved—professor load tests confirmed fewer downtime incidents."""
         },
         "cn": {
             "situation": "我们只有两周时间完成一个原型...",
@@ -74,7 +166,7 @@ P1_BQ_ANSWERS = {
 
     "5":   {
         "en": {
-            "situation": """- Midway through the project, we faced serious performance issues in DynamoDB (slow queries, occasional timeouts). There was no official directive or time to deeply research solutions.
+            "situation": """Midway through the project, we faced serious performance issues in DynamoDB (slow queries, occasional timeouts). There was no official directive or time to deeply research solutions.
 - Redis was unfamiliar to our team, so introducing it might complicate the pipeline. However, our logs were hammering DynamoDB, indicating a caching solution could really help.""",
             "task": """I needed to decide quickly whether to adopt Redis caching without a thorough feasibility study (due to tight timelines).""",
             "action": """1. **Quick Investigation**: I skimmed Redis documentation and community examples to understand caching benefits and limitations.
