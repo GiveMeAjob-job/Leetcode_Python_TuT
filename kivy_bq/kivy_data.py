@@ -178,7 +178,8 @@ class BQLayout(BoxLayout):
             values=LANG_Choices,
             size_hint=(None,1),
             width=80,
-            font_name="SimHei"
+            font_name="SimHei",
+            option_cls=MySpinnerOption
         )
         row_lp.add_widget(self.combo_lp_lang)
 

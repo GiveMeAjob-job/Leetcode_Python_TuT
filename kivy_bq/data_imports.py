@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # 这里专门从 docs/bq/data/... 导入需要的全局变量
-
 from kivy_bq.data.data import (
     PROJECTS_BQ_List,
     LP_List,
