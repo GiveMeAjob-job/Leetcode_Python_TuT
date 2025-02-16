@@ -51,3 +51,4 @@ def safe_get_answer(data, lang_key, fallback="**[Error]** 未提供此语言回�
     if isinstance(data, dict):
         return data.get(lang_key, fallback)
     return str(data)
+
